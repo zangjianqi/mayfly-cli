@@ -9,4 +9,5 @@ CVS
 .wafpickle-N
 *.swp
 ._*
+package-lock.json
 npm-debug.log
