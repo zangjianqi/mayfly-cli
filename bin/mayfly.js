@@ -18,17 +18,8 @@ program
     .description('generate a new project from a template')
     .option('-c, --clone [mode]', 'use git clone')
     .option('--offline [mode]', 'use cached template')
-    .action((template, project, cmd ) => {
-
-      var clone = cmd.clone || false;
-      let offline = cmd.offline || false;
-
-      console.log('template:: ', template);
-      console.log('project:: ', project);
-      console.log('clone:: ', clone);
-      console.log('offline:: ', offline);
-      init(template, project, cmd);
-      helpFn.help(program.args, program);
+    .action((...args) => {
+      init(...args);
     })
 
 program
@@ -38,16 +29,6 @@ program
         list();
 
     })
-
-    program
-      .command('setup [env]')
-      .description('run setup commands for all envs')
-      .option("-s, --setup_mode [mode]", "Which setup mode to use")
-      .action(function(env, options){
-        var mode = options.setup_mode || "normal";
-        env = env || 'all';
-        console.log('setup for %s env(s) with %s mode', env, mode);
-      });
 
 
 
