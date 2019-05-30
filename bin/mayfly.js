@@ -6,21 +6,28 @@ const chalk = require('chalk')
 
 const helpFn = require('../lib/help');
 const list = require('../lib/list');
-
+const init = require('../lib/init');
 program
     .version(require('../package').version)
     .usage('<command> [options]')
 
 program
     .command('init')
-    .alias('i')
+    // .alias('i')
     .usage('<template-name> [project-name]')
     .description('generate a new project from a template')
-    .option('-c, --clone', 'use git clone')
-    .option('--offline', 'use cached template')
-    .action((name, cmd) => {
-      console.log(name, cmd);
+    .option('-c, --clone [mode]', 'use git clone')
+    .option('--offline [mode]', 'use cached template')
+    .action((template, project, cmd ) => {
 
+      var clone = cmd.clone || false;
+      let offline = cmd.offline || false;
+
+      console.log('template:: ', template);
+      console.log('project:: ', project);
+      console.log('clone:: ', clone);
+      console.log('offline:: ', offline);
+      init(template, project, cmd);
       helpFn.help(program.args, program);
     })
 
@@ -31,6 +38,18 @@ program
         list();
 
     })
+
+    program
+      .command('setup [env]')
+      .description('run setup commands for all envs')
+      .option("-s, --setup_mode [mode]", "Which setup mode to use")
+      .action(function(env, options){
+        var mode = options.setup_mode || "normal";
+        env = env || 'all';
+        console.log('setup for %s env(s) with %s mode', env, mode);
+      });
+
+
 
   program.on('--help', () => {
     console.log()
