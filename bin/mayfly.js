@@ -17,7 +17,6 @@ program
     .usage('<template-name> [project-name]')
     .description('generate a new project from a template')
     .option('-c, --clone [mode]', 'use git clone')
-    .option('--offline [mode]', 'use cached template')
     .action((...args) => {
       init(...args);
     })
