@@ -2,6 +2,10 @@
   "name": "mayfly-cli",
   "version": "0.0.2",
   "description": "this is a generation for webapp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zangjianqi/mayfly-cli"
+  },
   "bin": {
     "mayfly": "bin/mayfly.js"
   },
@@ -11,9 +15,12 @@
   ],
   "keywords": [
     "generator",
-    "mayfly"
+    "mayfly",
+    "build-tools",
+    "cli",
+    "web"
   ],
-  "author": "jianqi.zang@gmail.com",
+  "author": "zangjianqi",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
