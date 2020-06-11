@@ -1,14 +1,15 @@
+#!/usr/bin/env node
+
 const request = require('request')
 const chalk = require('chalk')
 
-function list(){
-  request({
-    url: 'https://raw.githubusercontent.com/zangjianqi/templetes/master/templetes.json',
+request({
+    url: 'https://api.github.com/users/mayfly-templates/repos',
     headers: {
       'User-Agent': 'mayfly-cli'
     }
   }, (err, res, body) => {
-    if (err) logger.fatal(err)
+    if (err) return console.log("error::: ", err);
     const requestBody = JSON.parse(body)
     if (Array.isArray(requestBody)) {
       console.log('  Available official templates:')
@@ -23,6 +24,3 @@ function list(){
       console.error(requestBody.message)
     }
   })
-}
-
-module.exports = list;
