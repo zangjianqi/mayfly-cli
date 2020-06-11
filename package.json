@@ -2,12 +2,14 @@
   "name": "mayfly-cli",
   "version": "0.0.2",
   "description": "this is a generation for webapp",
+  "bin": {
+    "mayfly": "./bin/mayfly.js",
+    "mayfly-init": "./bin/mayfly-init.js",
+    "mayfly-list": "./bin/mayfly-list.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/zangjianqi/mayfly-cli"
-  },
-  "bin": {
-    "mayfly": "bin/mayfly.js"
   },
   "files": [
     "bin",
@@ -23,10 +25,13 @@
   "author": "zangjianqi",
   "license": "MIT",
   "dependencies": {
+    "async": "^3.2.0",
     "chalk": "^2.4.1",
+    "cli-prompt": "^0.6.0",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^2.15.1",
+    "consolidate": "^0.15.1",
     "download-git-repo": "^1.0.2",
     "execa": "^0.10.0",
     "handlebars": "^4.1.2",
@@ -34,9 +39,12 @@
     "metalsmith": "^2.3.0",
     "metalsmith-ignore": "^1.0.0",
     "metalsmith-layouts": "^2.3.1",
-    "minimist": "^1.2.0",
+    "minimatch": "^3.0.4",
+    "minimist": "^1.2.5",
     "ora": "^2.1.0",
+    "read-metadata": "^1.0.0",
     "request": "^2.88.0",
+    "rimraf": "^3.0.2",
     "semver": "^5.5.0",
     "slash": "^2.0.0",
     "user-home": "^2.0.0"
