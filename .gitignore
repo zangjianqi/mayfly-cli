@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+.idea
+.git
+CVS
+.svn
+.hg
+.lock-wscript
+.wafpickle-N
+*.swp
+._*
+package-lock.json
+npm-debug.log
