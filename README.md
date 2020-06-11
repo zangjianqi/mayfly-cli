@@ -39,7 +39,7 @@ If the official template cannot meet your needs, you can customize it based on t
 ```
 mayfly init username/repo my-project
 ```
-Where username/repo is the GitHub repo shorthand for your fork. use [download-git-repo](https://gitlab.com/flippidippi/download-git-repo), for related grammar specifications, please [see](https://gitlab.com/flippidippi/download-git- repo)
+Where username/repo is the GitHub repo shorthand for your fork. use [download-git-repo](https://gitlab.com/flippidippi/download-git-repo), for related grammar specifications, please [see](https://gitlab.com/flippidippi/download-git-repo)
 
 #### How to write a custom template
 
